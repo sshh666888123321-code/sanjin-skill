@@ -1,0 +1,48 @@
+{
+  "skill": "product-tiered-continuous-delivery",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "我有一份资料，想先卖低价版，再升级批改和陪跑服务。",
+      "expected_behavior": "调用 product-tiered-continuous-delivery 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "如何让知识产品持续更新，并按用户阶段设计不同交付深度？",
+      "expected_behavior": "调用 product-tiered-continuous-delivery 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "低价资料销量有但利润低，帮我重组为具体结果和服务。",
+      "expected_behavior": "调用 product-tiered-continuous-delivery 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "新产品还没找核心用户，我想先从精准用户扩到泛流量。",
+      "expected_behavior": "不调用 product-tiered-continuous-delivery",
+      "notes": "跨 skill 诱饵：应优先考虑 reverse-funnel-scaling"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "我有三个副业，不知道哪个值得长期投入。",
+      "expected_behavior": "不调用 product-tiered-continuous-delivery",
+      "notes": "跨 skill 诱饵：应优先考虑 long-term-project-filter-knowledge-transfer"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "我已有明确范围的定制项目，只想写一次交付清单。",
+      "expected_behavior": "判断边界：必要时调用 product-tiered-continuous-delivery，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
