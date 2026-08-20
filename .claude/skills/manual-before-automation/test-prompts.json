@@ -1,0 +1,48 @@
+{
+  "skill": "manual-before-automation",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "我还没手动发过一条，就想让AI批量生成发布，应该先做什么？",
+      "expected_behavior": "调用 manual-before-automation 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "自动化流程总出错，帮我记录三次手动运行并找稳定步骤。",
+      "expected_behavior": "调用 manual-before-automation 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "哪些步骤可以交给AI，哪些必须留人工验收和停止开关？",
+      "expected_behavior": "调用 manual-before-automation 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "我已经有稳定的输入输出和异常规则，请直接拆成原子任务串联。",
+      "expected_behavior": "不调用 manual-before-automation",
+      "notes": "跨 skill 诱饵：应优先考虑 atomic-workflow-chaining"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "我想做一个低价产品先验证内容、成交和交付闭环。",
+      "expected_behavior": "不调用 manual-before-automation",
+      "notes": "跨 skill 诱饵：应优先考虑 minimum-viable-loop"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "流程已手动跑通三次，但平台权限和审核规则刚变化，能直接批量吗？",
+      "expected_behavior": "判断边界：必要时调用 manual-before-automation，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
