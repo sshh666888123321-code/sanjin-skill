@@ -1,0 +1,48 @@
+{
+  "skill": "note-race-consultation-quality",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "我有5条投放笔记，想先小预算赛跑，再按有效咨询和成交加预算。",
+      "expected_behavior": "调用 note-race-consultation-quality 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "广告点击成本很低但咨询质量差，帮我判断哪条该停。",
+      "expected_behavior": "调用 note-race-consultation-quality 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "请建立点击、有效线索、成交和利润的投放回传表。",
+      "expected_behavior": "调用 note-race-consultation-quality 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "新产品还没找核心用户，我想先从10个精准用户试用再扩量。",
+      "expected_behavior": "不调用 note-race-consultation-quality",
+      "notes": "跨 skill 诱饵：应优先考虑 reverse-funnel-scaling"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "我有多个副业，不知道哪个值得长期投入。",
+      "expected_behavior": "不调用 note-race-consultation-quality",
+      "notes": "跨 skill 诱饵：应优先考虑 long-term-project-filter-knowledge-transfer"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "只有一条广告素材，咨询量不多但利润数据还没回传，能加预算吗？",
+      "expected_behavior": "判断边界：必要时调用 note-race-consultation-quality，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
