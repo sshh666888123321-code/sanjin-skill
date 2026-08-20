@@ -1,0 +1,16 @@
+{
+  "skill": "stable-logic-changing-interface",
+  "version": "0.1.0",
+  "source_book": "叁斤全部帖子 — 叁斤",
+  "darwin_compatible": true,
+  "test_cases": [
+    {"id":"should-trigger-01","type":"should_trigger","prompt":"AI 工具改版了，但我的目标仍是让它根据背景生成可验收方案，我要不要全部重学？","expected_behavior":"应激活 stable-logic-changing-interface，分离稳定任务逻辑与变化界面。","notes":"工具改版迁移"},
+    {"id":"should-trigger-02","type":"should_trigger","prompt":"同一套获客方法换到新平台后效果变差，哪些部分能迁移，哪些必须重测？","expected_behavior":"应激活 stable-logic-changing-interface，保留需求逻辑并重测平台层。","notes":"跨平台迁移"},
+    {"id":"should-trigger-03","type":"should_trigger","prompt":"我花很多时间追最新模型，却说不清它解决哪一个工作问题，如何判断学习重点？","expected_behavior":"应激活 stable-logic-changing-interface，先写不变量与验收标准。","notes":"稳定层优先"},
+    {"id":"should-not-trigger-01","type":"should_not_trigger","prompt":"请告诉我某 AI 软件当前套餐价格和 API 限额。","expected_behavior":"不应激活本 skill，应做实时产品信息查询。","notes":"采购信息查询"},
+    {"id":"should-not-trigger-02","type":"should_not_trigger","prompt":"我不知道如何把供应商筛选问题描述给 AI，请先反问我需要哪些字段。","expected_behavior":"不应激活本 skill，应激活 contextual-precision-questioning。","notes":"跨 skill 混淆诱饵"},
+    {"id":"edge-01","type":"edge_case","prompt":"平台规则更新导致原转化链路受限，但用户需求和产品都没变。","expected_behavior":"应调用本 skill先分离不变需求与变化规则，再决定是否需要重新设计路径。","notes":"界面变化可能改变可行性"}
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "阶段 4 初稿自测。"
+}
