@@ -1,0 +1,16 @@
+{
+  "skill": "element-level-benchmarking-hotspot-lifecycle",
+  "version": "0.1.0",
+  "source_book": "叁斤全部帖子 — 叁斤",
+  "darwin_compatible": true,
+  "test_cases": [
+    {"id":"should-trigger-01","type":"should_trigger","prompt":"昨天有一篇爆款，我想知道该一比一复刻、换角度还是放弃，请帮我拆。","expected_behavior":"应激活 element-level-benchmarking-hotspot-lifecycle，拆元素并判断生命周期。","notes":"爆款迁移决策"},
+    {"id":"should-trigger-02","type":"should_trigger","prompt":"这个竞品账号看起来很简单，我想亲手做一篇测试到底哪里有隐性壁垒。","expected_behavior":"应激活本 skill，设计元素拆解与最小仿制测试。","notes":"可复制性验证"},
+    {"id":"should-trigger-03","type":"should_trigger","prompt":"同一个叙事结构在三个赛道出现，我想提取共同元素而不是抄整篇。","expected_behavior":"应激活本 skill，提取可迁移元素并结合自身素材重组。","notes":"跨赛道结构迁移"},
+    {"id":"should-not-trigger-01","type":"should_not_trigger","prompt":"我还没有任何样本，只想从零确定我的账号赛道和人设。","expected_behavior":"不应激活本 skill，应先激活 category-scene-persona-positioning。","notes":"跨 skill 混淆诱饵"},
+    {"id":"should-not-trigger-02","type":"should_not_trigger","prompt":"请帮我判断这个产品用户是主动搜索还是需要场景演示才能产生需求。","expected_behavior":"不应激活本 skill，应激活 explicit-potential-demand。","notes":"需求入口诱饵"},
+    {"id":"edge-01","type":"edge_case","prompt":"爆款已过峰值，但我的人群不同且有新素材，我还能参考吗？","expected_behavior":"可调用本 skill，保留情绪或结构元素，禁止整篇照搬并重新小测。","notes":"尾声样本的局部迁移"}
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "阶段 4 初稿自测。"
+}
