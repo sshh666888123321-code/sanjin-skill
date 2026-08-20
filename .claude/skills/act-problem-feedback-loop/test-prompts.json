@@ -1,0 +1,16 @@
+{
+  "skill": "act-problem-feedback-loop",
+  "version": "0.1.0",
+  "source_book": "叁斤全部帖子 — 叁斤",
+  "darwin_compatible": true,
+  "test_cases": [
+    {"id":"should-trigger-01","type":"should_trigger","prompt":"我还没发过内容，一直在学剪辑和买设备，想知道先做视频还是图文。","expected_behavior":"应激活 act-problem-feedback-loop，设计一个低成本可撤销的真实动作。","notes":"准备替代行动"},
+    {"id":"should-trigger-02","type":"should_trigger","prompt":"我想验证本地服务方向，先做一笔小订单，再根据客户实际问题决定补什么能力。","expected_behavior":"应激活本 skill，先行动、记录摩擦并形成下一问。","notes":"真实反馈"},
+    {"id":"should-trigger-03","type":"should_trigger","prompt":"我同时试了五个副业，每个都没有反馈，应该怎么通过行动聚焦？","expected_behavior":"应激活本 skill，选择一条主线跑最小动作并淘汰无反馈方向。","notes":"分散项目"},
+    {"id":"should-not-trigger-01","type":"should_not_trigger","prompt":"我要给一个健康问题做高风险自动化决策，先帮我直接执行。","expected_behavior":"不应激活本 skill，应先走合规与可撤销风险控制。","notes":"高风险反场景"},
+    {"id":"should-not-trigger-02","type":"should_not_trigger","prompt":"我已经有 100 条内容数据，想每周只改封面变量并比较成交率。","expected_behavior":"不应激活本 skill，应激活 periodic-review-controlled-variable-adjustment。","notes":"跨 skill 混淆诱饵"},
+    {"id":"edge-01","type":"edge_case","prompt":"行动成本不高，但需要先获得客户授权才能测试一单，我要不要直接做？","expected_behavior":"应调用本 skill先确认授权与撤销路径，再执行最小实验。","notes":"低成本但有权限前置"}
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "阶段 4 初稿自测。"
+}
