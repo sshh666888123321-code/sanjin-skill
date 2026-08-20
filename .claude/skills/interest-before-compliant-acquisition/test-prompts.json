@@ -1,0 +1,48 @@
+{
+  "skill": "interest-before-compliant-acquisition",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "用户有点赞但不私信，如何先建立兴趣再设计合规联系路径？",
+      "expected_behavior": "调用 interest-before-compliant-acquisition 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "我想把小红书用户导到私域，怎么保证用户知情且不踩平台红线？",
+      "expected_behavior": "调用 interest-before-compliant-acquisition 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "请把内容价值、主动咨询信号和最短承接步骤连成引流方案。",
+      "expected_behavior": "调用 interest-before-compliant-acquisition 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "我已有5条广告笔记，想按有效咨询、成交和利润加预算。",
+      "expected_behavior": "不调用 interest-before-compliant-acquisition",
+      "notes": "跨 skill 诱饵：应优先考虑 note-race-consultation-quality"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "我想把AI健康建议和医生意见、可撤销实验的风险门列出来。",
+      "expected_behavior": "不调用 interest-before-compliant-acquisition",
+      "notes": "跨 skill 诱饵：应优先考虑 compliant-reversible-risk-control"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "用户主动私信了，但我想用隐藏联系方式绕过审核。",
+      "expected_behavior": "判断边界：必要时调用 interest-before-compliant-acquisition，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
