@@ -1,0 +1,48 @@
+{
+  "skill": "quality-content-before-equipment-vanity",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "我觉得没流量是因为相机不够好，要不要先买设备？",
+      "expected_behavior": "调用 quality-content-before-equipment-vanity 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "粉丝涨了很多但没有精准咨询，帮我判断问题是不是内容价值。",
+      "expected_behavior": "调用 quality-content-before-equipment-vanity 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "预算有限，如何用现有设备测试内容，再决定是否升级？",
+      "expected_behavior": "调用 quality-content-before-equipment-vanity 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "我有多条广告素材，想按咨询质量和利润决定投放预算。",
+      "expected_behavior": "不调用 quality-content-before-equipment-vanity",
+      "notes": "跨 skill 诱饵：应优先考虑 note-race-consultation-quality"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "我想按周复盘内容变量，每次只调整一个变量。",
+      "expected_behavior": "不调用 quality-content-before-equipment-vanity",
+      "notes": "跨 skill 诱饵：应优先考虑 periodic-review-controlled-variable-adjustment"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "内容已经持续带来成交，但设备确实导致无法完成客户要求的画质，是否升级？",
+      "expected_behavior": "判断边界：必要时调用 quality-content-before-equipment-vanity，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
