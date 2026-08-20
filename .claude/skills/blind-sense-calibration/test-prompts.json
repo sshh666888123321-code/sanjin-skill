@@ -1,0 +1,16 @@
+{
+  "skill": "blind-sense-calibration",
+  "version": "0.1.0",
+  "source_book": "叁斤全部帖子 — 叁斤",
+  "darwin_compatible": true,
+  "test_cases": [
+    {"id":"should-trigger-01","type":"should_trigger","prompt":"我想训练网感，请先隐藏粉丝和点赞，让我预测这篇笔记的评论走向。","expected_behavior":"应激活 blind-sense-calibration，先预测再揭示真实数据。","notes":"盲测训练"},
+    {"id":"should-trigger-02","type":"should_trigger","prompt":"团队都觉得这条会爆，但大家被账号光环影响了，怎么独立校准判断？","expected_behavior":"应激活本 skill，建立隐藏元数据的独立预测记录。","notes":"去除光环"},
+    {"id":"should-trigger-03","type":"should_trigger","prompt":"我每次发布后都凭即时数据改方向，想用固定窗口记录误差。","expected_behavior":"应激活本 skill，延迟看数据并记录高估/低估偏差。","notes":"延迟对答案"},
+    {"id":"should-not-trigger-01","type":"should_not_trigger","prompt":"我已经有一周数据，想每周只改一个标题变量。","expected_behavior":"不应激活本 skill，应激活 periodic-review-controlled-variable-adjustment。","notes":"跨 skill 混淆诱饵"},
+    {"id":"should-not-trigger-02","type":"should_not_trigger","prompt":"请把这个竞品爆款拆成情绪、标题和结构元素，并判断它处于生命周期哪个阶段。","expected_behavior":"不应激活本 skill，应激活 element-level-benchmarking-hotspot-lifecycle。","notes":"对标诱饵"},
+    {"id":"edge-01","type":"edge_case","prompt":"结果已经公开了一半，但我仍想评估自己原来的判断是否准确。","expected_behavior":"可以调用，但应标记为非严格盲测，不能把事后解释当作预测。","notes":"盲测污染边界"}
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "阶段 4 初稿自测。"
+}
