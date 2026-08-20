@@ -1,0 +1,48 @@
+{
+  "skill": "old-element-recombination",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "新平台刚开放，我有一批旧客户和内容，怎么重组出一个低成本的新产品？",
+      "expected_behavior": "调用 old-element-recombination 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "我不想从零开始，能否把原来的旅游获客方法迁移到婚摄？",
+      "expected_behavior": "调用 old-element-recombination 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "请把我现有的客户、交付和渠道与这个 AI 工具的新能力组合成 3 个可测试方案。",
+      "expected_behavior": "调用 old-element-recombination 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "请把一个获客方案拆成输入、动作、输出和验收条件。",
+      "expected_behavior": "不调用 old-element-recombination",
+      "notes": "跨 skill 诱饵：应优先考虑 atomic-workflow-chaining"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "我已有一篇确定要发布的文案，请帮我润色语气。",
+      "expected_behavior": "不调用 old-element-recombination",
+      "notes": "跨 skill 诱饵：应优先考虑 human-ai-evolution-flywheel"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "我看到一个爆款项目，想原样复制到另一个平台，但还没有客户、内容或交付能力。",
+      "expected_behavior": "判断边界：必要时调用 old-element-recombination，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
