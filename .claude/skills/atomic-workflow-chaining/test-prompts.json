@@ -1,0 +1,48 @@
+{
+  "skill": "atomic-workflow-chaining",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "请把从选题到发布的整套内容流程拆成 AI 可执行的原子任务。",
+      "expected_behavior": "调用 atomic-workflow-chaining 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "AI 每次生成投放方案都会漏预算和复盘，如何按输入、输出、验收拆开？",
+      "expected_behavior": "调用 atomic-workflow-chaining 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "我想把逐字稿、配音、视频制作串成一条可复用的生产链路。",
+      "expected_behavior": "调用 atomic-workflow-chaining 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "我还没验证产品需求，想先跑一次最小端到端闭环。",
+      "expected_behavior": "不调用 atomic-workflow-chaining",
+      "notes": "跨 skill 诱饵：应优先考虑 minimum-viable-loop"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "请把我的 AI 资料、案例和判断规则做成三层知识库。",
+      "expected_behavior": "不调用 atomic-workflow-chaining",
+      "notes": "跨 skill 诱饵：应优先考虑 ai-knowledge-base-three-layers"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "我只需要把一句话改得更通顺，是否要拆成原子工作流？",
+      "expected_behavior": "判断边界：必要时调用 atomic-workflow-chaining，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
