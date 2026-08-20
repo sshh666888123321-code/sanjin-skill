@@ -1,0 +1,48 @@
+{
+  "skill": "demand-validation-triad",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "我想做一个职场模板，如何验证真实需求、最小版本、付费和交付？",
+      "expected_behavior": "调用 demand-validation-triad 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "用户都说需要，但我还没做过首单，下一步如何做可撤销 MVP？",
+      "expected_behavior": "调用 demand-validation-triad 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "请检查这个产品是否同时满足有人要、解法有效、能够稳定交付。",
+      "expected_behavior": "调用 demand-validation-triad 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "请先只收集搜索词和评论区的需求证据，不要设计产品。",
+      "expected_behavior": "不调用 demand-validation-triad",
+      "notes": "跨 skill 诱饵：应优先考虑 dual-route-demand-evidence"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "产品已经验证，只想把一次内容到成交的链路先跑一遍。",
+      "expected_behavior": "不调用 demand-validation-triad",
+      "notes": "跨 skill 诱饵：应优先考虑 minimum-viable-loop"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "产品有很多点赞，但交付依赖一个不稳定供应商，我可以先大规模投放吗？",
+      "expected_behavior": "判断边界：必要时调用 demand-validation-triad，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
