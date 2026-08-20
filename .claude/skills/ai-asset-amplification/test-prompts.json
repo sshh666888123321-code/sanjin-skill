@@ -1,0 +1,48 @@
+{
+  "skill": "ai-asset-amplification",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "我有多年咨询经验，想知道 AI 能否把这套交付复制给更多客户。",
+      "expected_behavior": "调用 ai-asset-amplification 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "这个新模型很火，我已有一套搜索手册，应该如何评估是否值得接入？",
+      "expected_behavior": "调用 ai-asset-amplification 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "我自用的利润看板很好用，怎么判断它能否产品化？",
+      "expected_behavior": "调用 ai-asset-amplification 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "请把我的资料库按信息、故事、判断三层重新整理。",
+      "expected_behavior": "不调用 ai-asset-amplification",
+      "notes": "跨 skill 诱饵：应优先考虑 ai-knowledge-base-three-layers"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "请教我如何调用一个 AI API 生成一篇文章。",
+      "expected_behavior": "不调用 ai-asset-amplification",
+      "notes": "跨 skill 诱饵：应优先考虑 atomic-workflow-chaining"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "我没有客户和方法，但想用 AI 直接做一个赚钱产品。",
+      "expected_behavior": "判断边界：必要时调用 ai-asset-amplification，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
