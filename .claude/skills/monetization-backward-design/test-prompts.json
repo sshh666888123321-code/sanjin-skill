@@ -1,0 +1,16 @@
+{
+  "skill": "monetization-backward-design",
+  "version": "0.1.0",
+  "source_book": "叁斤全部帖子 — 叁斤",
+  "darwin_compatible": true,
+  "test_cases": [
+    {"id":"should-trigger-01","type":"should_trigger","prompt":"我想做账号但只想着先涨粉，没想清楚卖给谁和交付什么，请帮我从变现倒推。","expected_behavior":"应激活 monetization-backward-design，先定义成交对象、结果和路径。","notes":"后端倒推"},
+    {"id":"should-trigger-02","type":"should_trigger","prompt":"我有三万粉但广告收入很低，想检查是不是粉丝和变现目标错位。","expected_behavior":"应激活本 skill，回看目标人群、产品和有效成交指标。","notes":"流量转化错位"},
+    {"id":"should-trigger-03","type":"should_trigger","prompt":"我有一个低价资料和陪跑服务，想设计产品找流量与流量找产品的选择。","expected_behavior":"应激活本 skill，选择一条双路径并倒推内容。","notes":"双路径"},
+    {"id":"should-not-trigger-01","type":"should_not_trigger","prompt":"我还不知道做哪个赛道，请从品类、场景和人设搭定位矩阵。","expected_behavior":"不应激活本 skill，应激活 category-scene-persona-positioning。","notes":"跨 skill 混淆诱饵"},
+    {"id":"should-not-trigger-02","type":"should_not_trigger","prompt":"我只想判断这个产品是搜索需求还是需要演示唤醒的潜在需求。","expected_behavior":"不应激活本 skill，应激活 explicit-potential-demand。","notes":"需求入口诱饵"},
+    {"id":"edge-01","type":"edge_case","prompt":"我目前没有产品，但已经有一个明确人群和问题，要不要先做内容再匹配产品？","expected_behavior":"应调用本 skill走流量找产品路径，同时要求先定义后端假设和最小转化验证。","notes":"无产品路径"}
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "阶段 4 初稿自测。"
+}
