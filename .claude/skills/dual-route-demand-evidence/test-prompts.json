@@ -1,0 +1,48 @@
+{
+  "skill": "dual-route-demand-evidence",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "我有一个宠物服务想法，如何同时查搜索词和真实抱怨来验证？",
+      "expected_behavior": "调用 dual-route-demand-evidence 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "这个关键词有下拉词，但我不确定是否是真需求，请分析搜索和帖子评论两路证据。",
+      "expected_behavior": "调用 dual-route-demand-evidence 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "请从评论区原话中提炼目标人群、场景和他们愿意解决的结果。",
+      "expected_behavior": "调用 dual-route-demand-evidence 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "两路证据已有了，请设计一个小 MVP、测试内容和交付可复制性检查。",
+      "expected_behavior": "不调用 dual-route-demand-evidence",
+      "notes": "跨 skill 诱饵：应优先考虑 demand-validation-triad"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "请把已确定的产品从内容到成交跑一遍最小闭环。",
+      "expected_behavior": "不调用 dual-route-demand-evidence",
+      "notes": "跨 skill 诱饵：应优先考虑 minimum-viable-loop"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "搜索量很高，但评论都是泛泛点赞，没有具体问题，我该不该开发？",
+      "expected_behavior": "判断边界：必要时调用 dual-route-demand-evidence，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
