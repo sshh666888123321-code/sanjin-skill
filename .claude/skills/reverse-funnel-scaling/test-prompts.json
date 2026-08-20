@@ -1,0 +1,48 @@
+{
+  "skill": "reverse-funnel-scaling",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "新产品还没验证，我想先找10个高度匹配用户试用。",
+      "expected_behavior": "调用 reverse-funnel-scaling 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "核心用户反馈通过后，兴趣人群和泛人群应该按什么顺序扩张？",
+      "expected_behavior": "调用 reverse-funnel-scaling 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "请给我的新服务设计核心层、兴趣层、拓展层的放量门槛。",
+      "expected_behavior": "调用 reverse-funnel-scaling 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "请让5条广告笔记小预算赛跑，按咨询质量和利润决定加码。",
+      "expected_behavior": "不调用 reverse-funnel-scaling",
+      "notes": "跨 skill 诱饵：应优先考虑 note-race-consultation-quality"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "我有资料包，想拆成低价版、批改版和陪跑版。",
+      "expected_behavior": "不调用 reverse-funnel-scaling",
+      "notes": "跨 skill 诱饵：应优先考虑 product-tiered-continuous-delivery"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "核心用户愿意试用但都不付费，我还能直接买泛流量吗？",
+      "expected_behavior": "判断边界：必要时调用 reverse-funnel-scaling，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
