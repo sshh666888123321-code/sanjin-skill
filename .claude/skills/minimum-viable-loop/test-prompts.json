@@ -1,0 +1,48 @@
+{
+  "skill": "minimum-viable-loop",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "我想做课程，但还不知道用户是否会买，如何先跑一个最小闭环？",
+      "expected_behavior": "调用 minimum-viable-loop 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "我不会拍照、设备也不全，如何先发布并获得真实反馈？",
+      "expected_behavior": "调用 minimum-viable-loop 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "请把这个新服务设计成一次可撤销的内容—首单—交付验证。",
+      "expected_behavior": "调用 minimum-viable-loop 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "我还在判断有没有真实需求，请先查搜索词、帖子和评论。",
+      "expected_behavior": "不调用 minimum-viable-loop",
+      "notes": "跨 skill 诱饵：应优先考虑 dual-route-demand-evidence"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "需求和产品都已验证，请把长期运营流程拆成原子节点。",
+      "expected_behavior": "不调用 minimum-viable-loop",
+      "notes": "跨 skill 诱饵：应优先考虑 atomic-workflow-chaining"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "这次尝试需要先支付一笔不可退款的大额费用，我还没有任何需求证据。",
+      "expected_behavior": "判断边界：必要时调用 minimum-viable-loop，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
