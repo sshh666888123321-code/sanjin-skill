@@ -1,0 +1,16 @@
+{
+  "skill": "category-scene-persona-positioning",
+  "version": "0.1.0",
+  "source_book": "叁斤全部帖子 — 叁斤",
+  "darwin_compatible": true,
+  "test_cases": [
+    {"id":"should-trigger-01","type":"should_trigger","prompt":"我想做职场工具账号，请用品类、场景、用户、价值、人设和视觉帮我收窄定位。","expected_behavior":"应激活 category-scene-persona-positioning，建立矩阵并筛选可持续坐标。","notes":"五因子定位"},
+    {"id":"should-trigger-02","type":"should_trigger","prompt":"别人做家居广告赚得多，但我没有审美和空间能力，是否还适合跟？","expected_behavior":"应激活本 skill，检查个人资源与赛道适配，不以他人收益替代判断。","notes":"个人适配"},
+    {"id":"should-trigger-03","type":"should_trigger","prompt":"我的租房账号什么都发，已经变成杂货铺，请帮我重新固定品类和场景。","expected_behavior":"应激活本 skill，收窄内容坐标并设计一致性测试。","notes":"定位漂移"},
+    {"id":"should-not-trigger-01","type":"should_not_trigger","prompt":"我已经确定卖咨询服务，请从成交结果倒推账号和内容路径。","expected_behavior":"不应激活本 skill，应激活 monetization-backward-design。","notes":"跨 skill 混淆诱饵"},
+    {"id":"should-not-trigger-02","type":"should_not_trigger","prompt":"我有一个昨日爆款，想判断现在属于上升期还是尾声。","expected_behavior":"不应激活本 skill，应激活 element-level-benchmarking-hotspot-lifecycle。","notes":"热点生命周期诱饵"},
+    {"id":"edge-01","type":"edge_case","prompt":"我很喜欢某个赛道但暂时没有产品和技能，能不能先定位？","expected_behavior":"可以调用，先标记能力与交付缺口，定位只作为假设并安排最小验证。","notes":"喜欢与可持续交付冲突"}
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "阶段 4 初稿自测。"
+}
