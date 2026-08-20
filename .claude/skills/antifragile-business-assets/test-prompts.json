@@ -1,0 +1,48 @@
+{
+  "skill": "antifragile-business-assets",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "平台突然限流，我的产品、客户和内容应该如何迁移，避免业务归零？",
+      "expected_behavior": "调用 antifragile-business-assets 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "请帮我盘点产品、能力、客户关系和渠道四类资产的单点风险。",
+      "expected_behavior": "调用 antifragile-business-assets 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "我想建立第二获客渠道，但不想把业务建立在买粉或规避规则上。",
+      "expected_behavior": "调用 antifragile-business-assets 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "我有一批旧内容，想组合到一个新平台测试三个产品方案。",
+      "expected_behavior": "不调用 antifragile-business-assets",
+      "notes": "跨 skill 诱饵：应优先考虑 old-element-recombination"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "请设计一次首单前的低成本可撤销 MVP 验证。",
+      "expected_behavior": "不调用 antifragile-business-assets",
+      "notes": "跨 skill 诱饵：应优先考虑 minimum-viable-loop"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "我想把客户导出后未经同意群发到其他平台，作为渠道备份可以吗？",
+      "expected_behavior": "判断边界：必要时调用 antifragile-business-assets，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
