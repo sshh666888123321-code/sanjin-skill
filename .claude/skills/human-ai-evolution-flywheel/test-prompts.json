@@ -1,0 +1,48 @@
+{
+  "skill": "human-ai-evolution-flywheel",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "AI 每次都把我的文案写得正确但不像我，如何让它从我的修改中进化？",
+      "expected_behavior": "调用 human-ai-evolution-flywheel 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "请设计一个保存原稿、终稿、修改差异并回写规则的流程。",
+      "expected_behavior": "调用 human-ai-evolution-flywheel 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "同一个路径错误 AI 已经犯了三次，如何把错误日志变成下一轮约束？",
+      "expected_behavior": "调用 human-ai-evolution-flywheel 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "请从零设计信息层、故事层和判断层的知识库目录。",
+      "expected_behavior": "不调用 human-ai-evolution-flywheel",
+      "notes": "跨 skill 诱饵：应优先考虑 ai-knowledge-base-three-layers"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "请判断哪些内容必须由人保留，哪些重复工作可以交给 AI。",
+      "expected_behavior": "不调用 human-ai-evolution-flywheel",
+      "notes": "跨 skill 诱饵：应优先考虑 human-ai-boundary-original-trust"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "只有一篇稿子需要润色，没有后续复用计划，是否要建立进化飞轮？",
+      "expected_behavior": "判断边界：必要时调用 human-ai-evolution-flywheel，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
