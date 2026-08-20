@@ -1,0 +1,16 @@
+{
+  "skill": "capture-then-filter-content",
+  "version": "0.1.0",
+  "source_book": "叁斤全部帖子 — 叁斤",
+  "darwin_compatible": true,
+  "test_cases": [
+    {"id":"should-trigger-01","type":"should_trigger","prompt":"我每天都觉得没选题，想建立一个先记录生活和客户原话、每周再筛选的系统。","expected_behavior":"应激活 capture-then-filter-content，分离采集与价值判断。","notes":"素材池"},
+    {"id":"should-trigger-02","type":"should_trigger","prompt":"我有很多失败经历和聊天记录，不知道哪些能转成对用户有用的内容。","expected_behavior":"应激活本 skill，按用户、定位、问题价值和故事线筛选。","notes":"碎片筛选"},
+    {"id":"should-trigger-03","type":"should_trigger","prompt":"我想把抽象的‘你应该怎么做’改成真实经历和个人判断，怎么采集素材？","expected_behavior":"应激活本 skill，从经历—判断—收获重写。","notes":"个人 IP 素材"},
+    {"id":"should-not-trigger-01","type":"should_not_trigger","prompt":"我已经有一篇明确选题，请帮我从竞品爆款中拆出可迁移的标题和情绪元素。","expected_behavior":"不应激活本 skill，应激活 element-level-benchmarking-hotspot-lifecycle。","notes":"跨 skill 混淆诱饵"},
+    {"id":"should-not-trigger-02","type":"should_not_trigger","prompt":"请帮我优化这条笔记的标题，不需要找新素材。","expected_behavior":"不应激活本 skill，应直接做标题优化。","notes":"已有素材的机械编辑"},
+    {"id":"edge-01","type":"edge_case","prompt":"素材来自客户聊天，内容很真实但含有姓名和订单信息，我能直接发吗？","expected_behavior":"应调用本 skill但先去标识化并确认授权，不能为内容价值牺牲隐私。","notes":"真实素材与隐私冲突"}
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "阶段 4 初稿自测。"
+}
