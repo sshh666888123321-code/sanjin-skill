@@ -1,0 +1,48 @@
+{
+  "skill": "ai-knowledge-base-three-layers",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "我有大量资料，但 AI 只会总结，如何让它按我的经验做决策？",
+      "expected_behavior": "调用 ai-knowledge-base-three-layers 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "请帮我把产品事实、真实案例和取舍规则分成一个可调用的三层知识库。",
+      "expected_behavior": "调用 ai-knowledge-base-three-layers 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "团队的错误日志和复盘如何沉淀成 AI 能执行的判断规则？",
+      "expected_behavior": "调用 ai-knowledge-base-three-layers 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "每次 AI 生成后，我想把人工修改差异持续写回并迭代。",
+      "expected_behavior": "不调用 ai-knowledge-base-three-layers",
+      "notes": "跨 skill 诱饵：应优先考虑 human-ai-evolution-flywheel"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "请给我一个跨平台迁移旧内容的 3 个测试方案。",
+      "expected_behavior": "不调用 ai-knowledge-base-three-layers",
+      "notes": "跨 skill 诱饵：应优先考虑 old-element-recombination"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "我只有零散资料，没有任何真实案例，但想让 AI 代表我的判断。",
+      "expected_behavior": "判断边界：必要时调用 ai-knowledge-base-three-layers，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
