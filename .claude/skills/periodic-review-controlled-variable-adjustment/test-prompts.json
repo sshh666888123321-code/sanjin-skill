@@ -1,0 +1,16 @@
+{
+  "skill": "periodic-review-controlled-variable-adjustment",
+  "version": "0.1.0",
+  "source_book": "叁斤全部帖子 — 叁斤",
+  "darwin_compatible": true,
+  "test_cases": [
+    {"id":"should-trigger-01","type":"should_trigger","prompt":"我同时改了封面、标题和发布时间，现在流量变了，怎么知道是哪一个原因？","expected_behavior":"应激活 periodic-review-controlled-variable-adjustment，设置观察窗并控制变量。","notes":"多变量混淆"},
+    {"id":"should-trigger-02","type":"should_trigger","prompt":"点击很便宜但只成交 4 个，预算应该向哪些投放单元迁移？","expected_behavior":"应激活本 skill，按有效成交而非点击成本做预算调整。","notes":"后端质量验收"},
+    {"id":"should-trigger-03","type":"should_trigger","prompt":"大家都说平台限流，但我想先排查选题、封面和标题，并做下一周实验。","expected_behavior":"应激活本 skill，先分流异常再每轮改变一类变量。","notes":"玄学流量诊断"},
+    {"id":"should-not-trigger-01","type":"should_not_trigger","prompt":"我还没发过内容，一直纠结要不要先买相机和学剪辑。","expected_behavior":"不应激活本 skill，应激活 act-problem-feedback-loop。","notes":"跨 skill 混淆诱饵"},
+    {"id":"should-not-trigger-02","type":"should_not_trigger","prompt":"请隐藏账号粉丝和点赞，让我先预测这篇笔记会有哪些评论。","expected_behavior":"不应激活本 skill，应激活 blind-sense-calibration。","notes":"盲测诱饵"},
+    {"id":"edge-01","type":"edge_case","prompt":"只有 2 条笔记且差异很大，我能不能得出标题变量有效的结论？","expected_behavior":"可调用本 skill，但应标记样本不足，先延长观察并避免强因果结论。","notes":"小样本边界"}
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "阶段 4 初稿自测。"
+}
