@@ -1,0 +1,48 @@
+{
+  "skill": "compliant-reversible-risk-control",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "AI要接入我的账号和文件权限，帮我设计最小授权、人工确认和回滚方案。",
+      "expected_behavior": "调用 compliant-reversible-risk-control 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "我想发布健康建议和客户照片，哪些专业意见和商用授权必须先确认？",
+      "expected_behavior": "调用 compliant-reversible-risk-control 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "我要投入一笔钱测试新产品，如何把实验设计成可撤销并设停损线？",
+      "expected_behavior": "调用 compliant-reversible-risk-control 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "AI测评初稿如何补充真实体验、原创判断和不推荐对象？",
+      "expected_behavior": "不调用 compliant-reversible-risk-control",
+      "notes": "跨 skill 诱饵：应优先考虑 human-ai-boundary-original-trust"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "我想先建立用户兴趣，再设计平台允许的最短私信承接路径。",
+      "expected_behavior": "不调用 compliant-reversible-risk-control",
+      "notes": "跨 skill 诱饵：应优先考虑 interest-before-compliant-acquisition"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "只是把公开资料整理成内部草稿，不发布也不涉及权限和健康决策。",
+      "expected_behavior": "判断边界：必要时调用 compliant-reversible-risk-control，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
