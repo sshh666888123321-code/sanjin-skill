@@ -1,0 +1,48 @@
+{
+  "skill": "human-ai-boundary-original-trust",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "AI写好了产品测评，我该补哪些真实体验和不推荐对象才能发布？",
+      "expected_behavior": "调用 human-ai-boundary-original-trust 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "客户同意后，我想用他的照片并让AI写标题，如何保留真实和授权？",
+      "expected_behavior": "调用 human-ai-boundary-original-trust 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "帮我划分AI做资料整理、人做最终判断的发布验收流程。",
+      "expected_behavior": "调用 human-ai-boundary-original-trust 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "新自动化流程还没手动跑过，能不能直接批量执行？",
+      "expected_behavior": "不调用 human-ai-boundary-original-trust",
+      "notes": "跨 skill 诱饵：应优先考虑 manual-before-automation"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "健康建议涉及复查和医生意见，先帮我列出授权和回滚风险。",
+      "expected_behavior": "不调用 human-ai-boundary-original-trust",
+      "notes": "跨 skill 诱饵：应优先考虑 compliant-reversible-risk-control"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "AI只做内部资料摘要，不会发布，也不涉及个人背书。",
+      "expected_behavior": "判断边界：必要时调用 human-ai-boundary-original-trust，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
