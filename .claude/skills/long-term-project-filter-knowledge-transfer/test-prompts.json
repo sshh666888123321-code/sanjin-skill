@@ -1,0 +1,48 @@
+{
+  "skill": "long-term-project-filter-knowledge-transfer",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-1",
+      "type": "should_trigger",
+      "prompt": "我有三个副业，帮我按成绩、独到方法、复制性、主业关联和喜欢程度筛选。",
+      "expected_behavior": "调用 long-term-project-filter-knowledge-transfer 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-2",
+      "type": "should_trigger",
+      "prompt": "怎么把我在电商做出的经验迁移成一个可交付课程？",
+      "expected_behavior": "调用 long-term-project-filter-knowledge-transfer 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-3",
+      "type": "should_trigger",
+      "prompt": "我喜欢这个项目但没有成绩，值得all in吗？",
+      "expected_behavior": "调用 long-term-project-filter-knowledge-transfer 并按其执行步骤处理",
+      "notes": ""
+    },
+    {
+      "id": "should-not-1",
+      "type": "should_not_trigger",
+      "prompt": "新产品先找10个核心用户，再根据反馈扩到兴趣人群。",
+      "expected_behavior": "不调用 long-term-project-filter-knowledge-transfer",
+      "notes": "跨 skill 诱饵：应优先考虑 reverse-funnel-scaling"
+    },
+    {
+      "id": "should-not-2",
+      "type": "should_not_trigger",
+      "prompt": "把这个已经确定的工作流拆成输入、动作、输出和验收。",
+      "expected_behavior": "不调用 long-term-project-filter-knowledge-transfer",
+      "notes": "跨 skill 诱饵：应优先考虑 atomic-workflow-chaining"
+    },
+    {
+      "id": "edge-1",
+      "type": "edge_case",
+      "prompt": "我已经选定项目，只是想把它拆成下周的执行任务。",
+      "expected_behavior": "判断边界：必要时调用 long-term-project-filter-knowledge-transfer，但遵守边界",
+      "notes": ""
+    }
+  ]
+}
